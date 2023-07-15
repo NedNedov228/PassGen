@@ -8,3 +8,7 @@ def generate_password(length):
         password += random.choice(charset)
     return password
 
+#copy text to clipboard
+def copy_to_clipboard(root,text):
+    root.clipboard_clear()
+    root.clipboard_append(text)
