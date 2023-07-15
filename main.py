@@ -1,8 +1,10 @@
 from tkinter import *
 from tkinter import ttk
+# from ttkthemes import ThemedTk
 import functions as f
 import accountsList as al
 from accounts import global_password
+
 # from encryption import set_password
 
 # def create_account_frame(label_text):
@@ -20,18 +22,24 @@ from accounts import global_password
 def main():
     password = ""
     root = Tk()
+    # root = ThemedTk(theme="arc")
     root.title("PassGen")
     root.geometry("400x500+500+100")
     root.resizable(False, False)
     # root.attributes("-toolwindow", True)
     root.iconbitmap("icon.ico")
 
+    # style = ttk.Style(root)
+    # style.theme_use("default")
+
     logo = PhotoImage(file="icon.png")
     
     errmsg = StringVar()
 
     logo = logo.subsample(2,2)
-    logo_label = ttk.Label(root, image=logo,text="PassGen", compound=LEFT, padding=8, foreground="#777777", font= "20")
+    PassGenText = '''    PassGen by
+    FontomO4ka'''
+    logo_label = ttk.Label(root, image=logo,text=PassGenText, compound=LEFT, padding=8, foreground="#777777", font= "20")
     logo_label.pack()
 
     acc_text = ttk.Label(root, text="Enter the password to get access to the account list:", padding=8)

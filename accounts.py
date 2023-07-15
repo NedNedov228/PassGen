@@ -2,7 +2,7 @@ from cryptography.fernet import Fernet
 from encryption import cipher, encrypt
 
 
-global_password = ""
+global_password = None
 people = list()
 
 f = open("data.txt", "r")
