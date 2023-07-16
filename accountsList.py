@@ -1,3 +1,4 @@
+import os
 from tkinter import *
 from tkinter import ttk
 from accounts import people
@@ -8,7 +9,8 @@ def accountsList():
     al.tk.call('set_theme', 'dark')
     al.title("Accounts List")
     # root.geometry("250x200") 
-    al.iconbitmap("icon.ico")
+    if os.name == "nt":
+        al.iconbitmap("icon.ico")
     al.rowconfigure(index=0, weight=1)
     al.columnconfigure(index=0, weight=1)
     
