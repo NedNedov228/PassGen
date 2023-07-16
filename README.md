@@ -1,3 +1,3 @@
-#PassGen
-##Generates strong password
+# PassGen
+## Generates strong password
 
