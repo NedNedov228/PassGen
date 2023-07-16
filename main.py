@@ -1,10 +1,9 @@
 from tkinter import *
 from tkinter import ttk
-from ttkthemes import ThemedTk
 import functions as f
 import accountsList as al
 from accounts import global_password
-
+import os
 from encryption import set_password
 
 # def create_account_frame(label_text):
@@ -29,7 +28,9 @@ def main():
     root.geometry("400x500+500+100")
     root.resizable(False, False)
     # root.attributes("-toolwindow", True)
-    root.iconbitmap("icon.ico")
+    #check if i am on windows
+    if os.name == "nt":
+        root.iconbitmap("icon.ico")
 
     # style = ttk.Style(root)
     # style.theme_use("default")
