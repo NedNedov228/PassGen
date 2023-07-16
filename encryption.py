@@ -41,10 +41,10 @@ def set_password(password:str):
         file.truncate(0)
         file.write(data)
         file.write("p"+password)
-        file.write("\n")
     file.close()
     encrypt(cipher,'data.txt')
 
+# if data is not encrypted:
 
 with open("private_key.txt", "rb") as file:
     key = file.read()
@@ -58,6 +58,7 @@ file.close()
 cipher = Fernet(key)
 
 
+#save the key on exit
 
 def save_key_on_exit(k):
     with open("private_key.txt", "wb") as file:

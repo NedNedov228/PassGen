@@ -4,6 +4,8 @@ from accounts import people
  
 def accountsList():
     al = Tk()
+    al.tk.call('source', 'azure.tcl')
+    al.tk.call('set_theme', 'dark')
     al.title("Accounts List")
     # root.geometry("250x200") 
     al.iconbitmap("icon.ico")

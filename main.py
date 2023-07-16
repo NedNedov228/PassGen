@@ -1,11 +1,11 @@
 from tkinter import *
 from tkinter import ttk
-# from ttkthemes import ThemedTk
+from ttkthemes import ThemedTk
 import functions as f
 import accountsList as al
 from accounts import global_password
 
-# from encryption import set_password
+from encryption import set_password
 
 # def create_account_frame(label_text):
 #     frame = ttk.Frame(borderwidth=1, relief=SOLID, padding=[8, 10])
@@ -22,6 +22,8 @@ from accounts import global_password
 def main():
     password = ""
     root = Tk()
+    root.tk.call('source', 'azure.tcl')
+    root.tk.call('set_theme', 'dark')
     # root = ThemedTk(theme="arc")
     root.title("PassGen")
     root.geometry("400x500+500+100")
@@ -47,14 +49,18 @@ def main():
     entry = ttk.Entry(show="•",justify=CENTER)
     entry.pack()
 
+    if global_password == None:
+        acc_text['text'] = "Set the password to get access to the account list:"
 
-    # if global_password == "":
-    #     acc_text['text'] = "Set the password to get access to the account list:"
-    #     set_password(entry.get())
 
     def login(event=None):
+        global global_password
         password = entry.get()  # Get the entered password
         entry.delete(0, END)  # Delete the entered password
+        if global_password == None:
+            set_password(password)
+            acc_text['text'] = "Enter the password to get access to the account list:"
+            al.accountsList()
         # Check if the username and password are correct
         if password == global_password:
             al.accountsList()

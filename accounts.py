@@ -7,12 +7,14 @@ people = list()
 
 f = open("data.txt", "r")
 
-#dectypt the data
+#decrypt the data
 data = f.read()
 data = cipher.decrypt(data.encode()).decode()
 
-
+#read the data
 for line in data.split("\n"):
+    if not line:
+        continue
     if(line[0] == "#"):
         info = line[1:].split(" ")
         info = [" ".join(info[:-3]), info[-3], info[-2], info[-1]]
