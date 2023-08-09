@@ -5,7 +5,7 @@ from encryption import cipher, encrypt
 global_password = None
 people = list()
 
-f = open("data.txt", "r")
+f = open("data/data.txt", "r")
 
 #decrypt the data
 data = f.read()
